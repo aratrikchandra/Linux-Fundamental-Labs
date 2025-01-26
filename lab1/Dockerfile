@@ -27,15 +27,15 @@ RUN echo "rm -f \`find /home -type f -name \"._*\"\`" >> /root/.bashrc
 # Add a user for the lab
 RUN useradd -ms /bin/bash labuser
 
+# Switch to the root user to run the other processes
+USER root
+WORKDIR /root
+
 # Copy initialization scripts to the container
 COPY init_scripts /home/labuser/init_scripts
 
 # Set permissions for the scripts
 RUN chmod +x /home/labuser/init_scripts/*.sh
-
-# Switch to the root user to run the other processes
-USER root
-WORKDIR /root
 
 # Default command to keep the container running and start all processes
 # CMD ["/bin/bash", "-c", "/home/labuser/init_scripts/start_all.sh && su - labuser -c /home/labuser/init_scripts/start_dummy_processes.sh && while :; do sleep 10; done"]
