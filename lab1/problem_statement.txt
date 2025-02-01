@@ -1,0 +1,74 @@
+Process Control:
+
+Your task is to write the correct commands in the provided .sh files to complete the tasks listed below.
+
+Lab Setup:
+You will be working with the following files:
+  - file1.sh
+  - file2.sh
+  - file3.sh
+  - file4.sh
+
+Each file corresponds to a specific task. You need to write the appropriate Linux command(s) in each file to complete the task.
+
+---
+
+Tasks:
+
+Task 1: List Processes Owned by "labuser"
+Objective: Write a command in file1.sh to list all processes owned by the user "labuser".
+
+Sample Output:
+
+    PID
+     21
+     24
+     ..
+     ..
+     27
+---
+
+Task 2: Find All Python Processes
+Objective: Write a command in file2.sh to show all process PIDs running Python.
+
+Sample Output: 
+
+8
+9
+..
+..
+..
+34
+35
+
+---
+
+Task 3: Find All C Processes
+Objective: Write a command in file3.sh to find all processes running a C program named "simple".
+
+Sample Output:
+6
+10
+..
+..
+..
+31
+32
+
+---
+
+Task 4: Show Top 5 Processes Sorted by CPU Usage
+Objective: Write a command in file4.sh to display the top 5 processes sorted in descending order by CPU usage.
+
+Sample Output:
+
+    PID %CPU
+     31 97.3
+     35 97.3
+     33 97.3
+     34 97.3
+     32 97.2
+---
+
+Submission:
+Once you have completed all the tasks, save the .sh files and evaluate and submit them as instructed by the lab instructor.
