@@ -1,6 +1,7 @@
 FROM ubuntu:latest as ubuntu-stage
 
 # Installing common packages
+# RUN yes | unminimize
 RUN apt-get update -y && apt-get install -y software-properties-common language-pack-en-base debconf-utils curl 
 RUN apt-get update -y && apt-get install net-tools wget nano vim less -y
 RUN apt-get update -y && apt-get install iproute2 python3 python3-pip -y
@@ -30,9 +31,8 @@ RUN useradd -ms /bin/bash labuser
 USER root
 WORKDIR /root
 
-# Download initialization scripts to the container
-RUN wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1FLcdqsyEOmboCnfuljBtPe3oHmt9qy9W' -O /home/labuser/init_scripts.tar.gz
-RUN tar -xzf /home/labuser/init_scripts.tar.gz
+# Copy initialization scripts to the container
+COPY init_scripts /home/labuser/init_scripts
 
 # Set permissions for the scripts
 RUN chmod +x /home/labuser/init_scripts/*.sh

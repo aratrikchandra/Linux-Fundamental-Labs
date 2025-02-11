@@ -1,0 +1,28 @@
+Problem Statement: Linux User and Permission Management
+
+Scenario:  
+You are hired as a junior system administrator for a software development company. The company has a shared project directory where multiple developers collaborate. Your task is to configure user permissions, manage ownership, and automate certain administrative tasks. Write your commands in a file named submission.sh. The project directory contains subdirectories: backend, frontend, and database. 
+Tasks:  
+1. User and Ownership Management:
+   - Create users (backend_dev, frontend_dev, db_admin, auditor) and groups (dev_team, db_team).
+   - The owner of the project directory is "admin". Switch to the admin user in order to
+   a. Change the ownership of the backend directory to the user backend_dev and the group dev_team.  
+   b. Change the ownership of the frontend directory to the user frontend_dev and the group dev_team.  
+   c. Change the ownership of the database directory to the user db_admin and the group db_team.  
+
+2. Permission Configuration:  
+   - Ensure that the backend directory is readable and executable by the owner and group, but writable only by the owner.  
+   - Ensure that the frontend directory is readable, writable, and executable by the owner, but only readable by the group.  
+   - Ensure that the database directory is accessible (read, write, execute) only by the owner and no one else.  
+
+3. Sudo Privileges:  
+   - User named "auditor" should have sudo privileges to read the contents of the database directory but not modify it i.e. grant "auditor" sudo access to run the ls command on the database directory.  
+
+
+Submission Instructions:  
+   - Write a script in submission.sh that automates the above tasks. Ensure the script checks if the required users (admin, backend_dev, frontend_dev, db_admin, auditor) and groups (dev_team, db_team) exist, and creates them if they do not. 
+
+Note:
+- Save all your commands in a file named submission.sh.  
+- Ensure the script is executable and can be run without errors.
+- Use absolute paths(e.g. /home/labDirectory/project/database) to refer to the subfolders in submission.sh.
