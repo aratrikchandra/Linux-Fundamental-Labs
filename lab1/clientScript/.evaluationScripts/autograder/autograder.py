@@ -118,7 +118,7 @@ def verify_file4(output, expected_output):
         return False, f"Exception during verification: {str(e)}"
 
 def main():
-    lab_directory_path = "./home/labDirectory"  # Update this if the lab files are in a specific directory
+    lab_directory_path = "/home/labDirectory"  # Update this if the lab files are in a specific directory
     overall = {"data": []}
     data = []
 
@@ -126,28 +126,28 @@ def main():
     test_cases = [
         {
             "testid": "Task 1: List Processes Owned by 'labuser'",
-            "script": "file1.sh",
+            "script": "/home/labDirectory/file1.sh",
             "verify_function": verify_file1,
             "expected_command": "ps -u labuser -o pid",
             "maximum_marks": 1
         },
         {
             "testid": "Task 2: Find All Python Processes",
-            "script": "file2.sh",
+            "script": "/home/labDirectory/file2.sh",
             "verify_function": verify_file2,
             "expected_command": "pgrep python3",
             "maximum_marks": 1
         },
         {
             "testid": "Task 3: Find All C Processes",
-            "script": "file3.sh",
+            "script": "/home/labDirectory/file3.sh",
             "verify_function": verify_file3,
             "expected_command": "pgrep simple",
             "maximum_marks": 1
         },
         {
             "testid": "Task 4: Show Top 5 Processes Sorted by CPU Usage",
-            "script": "file4.sh",
+            "script": "/home/labDirectory/file4.sh",
             "verify_function": verify_file4,
             "expected_command": "ps -eo pid,%cpu --sort=-%cpu | head -n 6",
             "maximum_marks": 1
@@ -164,7 +164,7 @@ def main():
         }
 
         # Execute student's script
-        student_output, error = execute_command(f"{lab_directory_path}{test['script']}")
+        student_output, error = execute_command(test['script'])
         if student_output is None:
             test_result["message"] = f"Error executing {test['script']}: {error}"
             data.append(test_result)

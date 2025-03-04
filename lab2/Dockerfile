@@ -25,11 +25,16 @@ ENV TERM=xterm-256color
 
 # Setup Directory Structure
 RUN mkdir /home/labDirectory
+RUN mkdir /home/.evaluationScripts
+
+# Copy directories to the container
+# COPY labDirectory /home/labDirectory
+# COPY .evaluationScripts /home/.evaluationScripts
+
 RUN mkdir -p /home/labDirectory/project
 RUN mkdir -p /home/labDirectory/project/backend
 RUN mkdir -p /home/labDirectory/project/frontend
 RUN mkdir -p /home/labDirectory/project/database
-RUN mkdir /home/.evaluationScripts
 
 # Create dummy files in subdirectories
 RUN echo "Backend dummy content" > /home/labDirectory/project/backend/backend_file.txt
@@ -52,4 +57,4 @@ USER root
 WORKDIR /root
 
 # Default command to keep the container running
-CMD ["/bin/bash"]
+CMD [ "/bin/bash", "-c", "while :; do sleep 10; done" ]

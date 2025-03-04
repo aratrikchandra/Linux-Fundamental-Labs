@@ -20,12 +20,12 @@ Objective: Write a command in file1.sh to list all processes owned by the user "
 
 Sample Output:
 
-    PID
-     21
-     24
-     ..
-     ..
-     27
+    PID USER
+     24 labuser
+     25 labuser
+     26 labuser
+     27 labuser
+     28 labuser
 ---
 
 Task 2: Find All Python Processes
