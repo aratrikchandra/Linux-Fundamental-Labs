@@ -1,0 +1,3 @@
+302	Dave	dave@hidden.com	72000	HR
+303	Frank	frank@hidden.com	71000	HR
+301	Charlie	charlie@hidden.com	70000	HR

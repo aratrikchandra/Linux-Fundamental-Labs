@@ -1,0 +1,98 @@
+Problem Statement: Linux Text Processing with Cut, Paste, Uniq, and Sort
+
+Objective:  
+Combine data from three employee files, filter by department, remove duplicates using `uniq`, and sort results. Use Linux commands `cut`, `paste`, `uniq`, and `sort`. Intermediate files (e.g. `part1.txt`, `part2.txt`, `part3.txt`, `combined.txt` etc.) will be checked for correctness, don't delete them
+
+---
+
+ Tasks:
+1. Extract Columns:
+   - From `employees1.txt`: Extract columns 1 (`EmployeeID`) and 2 (`Name`). Save to `part1.txt`.
+   - From `employees2.txt`: Extract column 3 (`Email`). Save to `part2.txt`.
+   - From `employees3.txt`: Extract columns 2 (`Salary`) and 3 (`Department`). Save to `part3.txt`.
+
+2. Combine Columns:  
+   Use `paste` to merge `part1.txt`, `part2.txt`, and `part3.txt` in the order:  
+   `EmployeeID`, `Name`, `Email`, `Salary`, `Department`. Save to `combined.txt`.
+
+3. Filter by Department and Remove Duplicates:
+   Retain only rows where `Department` is HR
+   Remove duplicate rows based on `EmployeeID` using `uniq`. Ensure the input to `uniq` is sorted by `EmployeeID`.
+   Save the result to `deduped.txt`
+5. Sort:  
+   Sort the final data by `Salary` in descending order.
+   Save the result to `output.txt`.
+
+---
+
+ Example Test Case
+
+Input Files:  
+1. `employees1.txt` (columns: `EmployeeID`, `Name`, `Phone`):
+   ```
+   101	John	555-1234
+   102	Jane	555-5678
+   103	Alice	555-9012
+   101	John	555-1234  # Duplicate
+   ```
+
+2. `employees2.txt` (columns: `EmployeeID`, `Phone`, `Email`):
+   ```
+   101	-	john@example.com
+   102	-	jane@example.com
+   103	-	alice@example.com
+   101	-	john@example.com  # Duplicate
+   ```
+
+3. `employees3.txt` (columns: `EmployeeID`, `Salary`, `Department`):
+   ```
+   101	50000	HR
+   102	60000	IT
+   103	55000	HR
+   101	50000	HR          # Duplicate
+   ```
+
+Expected Intermediate Files:  
+1. `part1.txt` (columns 1-2 from `employees1.txt`):
+   ```
+   101	John
+   102	Jane
+   103	Alice
+   101	John
+   ```
+
+2. `part2.txt` (column 3 from `employees2.txt`):
+   ```
+   john@example.com
+   jane@example.com
+   alice@example.com
+   john@example.com
+   ```
+
+3. `part3.txt` (columns 2-3 from `employees3.txt`):
+   ```
+   50000	HR
+   60000	IT
+   55000	HR
+   50000	HR
+   ```
+
+4. `combined.txt` (merged columns):
+   ```
+   101	John	john@example.com	50000	HR
+   102	Jane	jane@example.com	60000	IT
+   103	Alice	alice@example.com	55000	HR
+   101	John	john@example.com	50000	HR
+   ```
+5. `deduped.txt` ( removed duplicates):
+```
+101	John	john@example.com	50000	HR
+103	Alice	alice@example.com	55000	HR
+```
+
+Final Output (`output.txt`):
+```
+103	Alice	alice@example.com	55000	HR
+101	John	john@example.com	50000	HR
+```
+

@@ -1,0 +1,9 @@
+Problem Statement
+
+In this lab, you will work with the tar command in Linux to perform various operations on a tar archive. Your task is to write a Bash scripts which accomplish the following:
+
+View the contents of a tar archive without untarring it: Display the contents of the provided tar archive archive.tar without extracting it. Write the necessary command in the file submission1.sh
+
+Extract only specific folders: Extract only the folders fold1 and fold2 from the archive.tar file. Write the necessary command in the file submission2.sh
+
+Create a new tar archive with specific folders and readme file: Create three new tar archives each of which includes the extracted folders fold1 and fold2, along with readme.txt file. The new tar archives should be generated using three different compression methods: gzip, bzip2, and xz. The final archives should be named file.tgz, file.tar.bz2, file.tar.xz respectively. Write the necessary commands in the file submission3.sh

@@ -1,0 +1,10 @@
+Problem Statement
+
+You are required to create a bash script that processes a `data.txt` file using the `tr` command. The script should perform the following transformations and generate four new files, each containing the result of one transformation:
+
+1. Convert all uppercase letters to lowercase to make the file case-insensitive. Save the result in `lowercase.txt`.
+2. Delete all digits from the file, as they are not needed for this task. Save the result in `no_digits.txt`.
+3. Replace all colons (`:`) with hyphens (`-`) to standardize the format. Save the result in `replace_colons.txt`.
+4. Squeeze consecutive spaces into a single space to clean up the file. Save the result in `squeeze_spaces.txt`.
+
+The script should read the `data.txt` file, perform the transformations, and generate the four output files as described.
